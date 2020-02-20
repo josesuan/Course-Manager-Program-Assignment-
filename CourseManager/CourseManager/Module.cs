@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CourseManager
 {
+	//This is a class 
     class Module
     {
 		//Attributes and properties
@@ -18,7 +19,7 @@ namespace CourseManager
         public string location { get; set; }
 
 
-		//Method
+		//Method(s)
         public int TimeRemaining()
         {
             DateTime currentDate;
