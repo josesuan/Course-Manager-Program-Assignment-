@@ -34,6 +34,8 @@ namespace CourseManager
                 errors = true;
             }
 
+
+			//If there are no errors, add details in the Datagrid view
             if (errors == false)
             {
                 currentModule.year = tb_year.Text;
@@ -50,6 +52,7 @@ namespace CourseManager
 
                 dgv_ongoing.Rows.Add(row);
             }
+			//Else if there are missing text
             else
             {
                 MessageBox.Show("Please complete the form");

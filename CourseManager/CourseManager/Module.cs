@@ -8,6 +8,7 @@ namespace CourseManager
 {
     class Module
     {
+		//Attributes and properties
         public string year { get; set; }
         public string moduleName { get; set; }
         public int assignmentNum { get; set; }
@@ -16,6 +17,8 @@ namespace CourseManager
         public DateTime dueDate { get; set; }
         public string location { get; set; }
 
+
+		//Method
         public int TimeRemaining()
         {
             DateTime currentDate;
