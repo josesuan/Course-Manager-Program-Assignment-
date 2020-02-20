@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CourseManager
 {
+	//This is a class 
     class Module
     {
 		//Attributes and properties
