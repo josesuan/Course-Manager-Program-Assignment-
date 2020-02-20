@@ -18,7 +18,7 @@ namespace CourseManager
         public string location { get; set; }
 
 
-		//Method
+		//Method(s)
         public int TimeRemaining()
         {
             DateTime currentDate;
