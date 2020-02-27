@@ -14,7 +14,7 @@ namespace CourseManager
     {
         Module currentModule;
 
-		Dashboard Dashboard = new Dashboard(); //Initialised object
+		Dashboard dashboard = new Dashboard(); //Initialised object
 
 		public OptionsForm(Module mod)
         {
@@ -36,9 +36,10 @@ namespace CourseManager
 
         private void Bt_sendPending_Click(object sender, EventArgs e)
         {
-			//Dashboard.removeOldLocation(currentModule); //Remove module in Ongoing
-			
-			//Dashboard.AddToPending(); // Adds selected module in dgv pending
+            //Dashboard.removeOldLocation(currentModule); //Remove module in Ongoing
+            currentModule.location = "Pending";
+            dashboard.Show();
+            //Dashboard.AddToPending(); // Adds selected module in dgv pending
 			this.Close();
 		}
 
@@ -46,12 +47,12 @@ namespace CourseManager
 		private void Bt_remove_Click(object sender, EventArgs e)
 		{
 			//Remove in the dgv 
-			Dashboard dashboard = new Dashboard();
 
 
-			//Remove in object class
-			Dashboard.removeOldLocation(currentModule);
+            //Remove in object class
+            //Dashboard.removeOldLocation(currentModule);
 			Dashboard.moduleList.Remove(currentModule);
+            dashboard.Show();
 			this.Hide();
 		}
 
