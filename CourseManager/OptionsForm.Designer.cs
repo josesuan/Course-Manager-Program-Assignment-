@@ -45,9 +45,9 @@
 			this.Lb_Module.Controls.Add(this.bt_edit);
 			this.Lb_Module.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.Lb_Module.Location = new System.Drawing.Point(40, 89);
-			this.Lb_Module.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Lb_Module.Margin = new System.Windows.Forms.Padding(4);
 			this.Lb_Module.Name = "Lb_Module";
-			this.Lb_Module.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Lb_Module.Padding = new System.Windows.Forms.Padding(4);
 			this.Lb_Module.Size = new System.Drawing.Size(991, 191);
 			this.Lb_Module.TabIndex = 3;
 			this.Lb_Module.TabStop = false;
@@ -56,7 +56,7 @@
 			// bt_remove
 			// 
 			this.bt_remove.Location = new System.Drawing.Point(716, 71);
-			this.bt_remove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.bt_remove.Margin = new System.Windows.Forms.Padding(4);
 			this.bt_remove.Name = "bt_remove";
 			this.bt_remove.Size = new System.Drawing.Size(200, 81);
 			this.bt_remove.TabIndex = 3;
@@ -67,17 +67,18 @@
 			// bt_sendFinish
 			// 
 			this.bt_sendFinish.Location = new System.Drawing.Point(504, 71);
-			this.bt_sendFinish.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.bt_sendFinish.Margin = new System.Windows.Forms.Padding(4);
 			this.bt_sendFinish.Name = "bt_sendFinish";
 			this.bt_sendFinish.Size = new System.Drawing.Size(187, 81);
 			this.bt_sendFinish.TabIndex = 2;
 			this.bt_sendFinish.Text = "Send to finish list";
 			this.bt_sendFinish.UseVisualStyleBackColor = true;
+			this.bt_sendFinish.Click += new System.EventHandler(this.Bt_sendFinish_Click);
 			// 
 			// bt_sendPending
 			// 
 			this.bt_sendPending.Location = new System.Drawing.Point(276, 71);
-			this.bt_sendPending.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.bt_sendPending.Margin = new System.Windows.Forms.Padding(4);
 			this.bt_sendPending.Name = "bt_sendPending";
 			this.bt_sendPending.Size = new System.Drawing.Size(191, 81);
 			this.bt_sendPending.TabIndex = 1;
@@ -88,7 +89,7 @@
 			// bt_edit
 			// 
 			this.bt_edit.Location = new System.Drawing.Point(35, 71);
-			this.bt_edit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.bt_edit.Margin = new System.Windows.Forms.Padding(4);
 			this.bt_edit.Name = "bt_edit";
 			this.bt_edit.Size = new System.Drawing.Size(196, 81);
 			this.bt_edit.TabIndex = 0;
@@ -103,7 +104,7 @@
 			this.label1.Location = new System.Drawing.Point(405, 11);
 			this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(252, 33);
+			this.label1.Size = new System.Drawing.Size(212, 29);
 			this.label1.TabIndex = 2;
 			this.label1.Text = "Option Edit Form";
 			// 
@@ -114,7 +115,7 @@
 			this.ClientSize = new System.Drawing.Size(1067, 305);
 			this.Controls.Add(this.Lb_Module);
 			this.Controls.Add(this.label1);
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "OptionsForm";
 			this.Text = "OptionsForm";
 			this.Lb_Module.ResumeLayout(false);

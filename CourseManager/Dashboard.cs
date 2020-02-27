@@ -12,50 +12,37 @@ namespace CourseManager
 {
     public partial class Dashboard : Form
     {
+		//Initialised
 		Module currentModule = new Module(); //selection is the current module
-        List<Module> moduleList = new List<Module>();
 
-		
+		//Module list
+        static public List<Module> moduleList = new List<Module>();
 
-		//static List<string> OnGoing = new List<string>();
-		static public List<Module> Pending = new List<Module>();
-		static public List<Module> Finish = new List<Module>();
 
 
         public Dashboard()
         {
             InitializeComponent();
         }
-		/*public Dashboard(string location, Module mod)
+		public Dashboard(Module mod)
         {
             InitializeComponent();
 
-            currentModule = mod;
-
-            switch (location)
-            {
-                case "Ongoing":
-                    AddToOngoing();
-                    break;
-                case "Pending":
-                    AddToPending(mod);
-                    break;
-                case "Finished":
-                    AddToFinished();
-                    break;
-                default: MessageBox.Show("Unexpected error, please try again");
-                    break;
-            }
-        }*/
+            currentModule = mod; //Assign selected mod to current module object
+        }
 
 		static public void dashboard(string location, Module mod)
 		{
 
-		
 		}
 
-
+		
 		#region buttonClick
+		/// <summary>
+		/// Button click for adding new module to ongoing dgv 
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void Btn_add_Click(object sender, EventArgs e)
         {
             bool errors = false;
@@ -81,9 +68,10 @@ namespace CourseManager
                 currentModule.dueDate = dt_dueDate.Value;
                 currentModule.location = "Ongoing";
 
+				//Add to module list as object
 				moduleList.Add(new Module(currentModule.year, currentModule.moduleName, currentModule.assignmentNum, currentModule.assigmentType, currentModule.startDate,currentModule.dueDate, currentModule.location));
 
-                AddToOngoing();
+				AddToOngoing(); //Add to ongoing dgv
             }
             else
             {
@@ -91,6 +79,12 @@ namespace CourseManager
             }
         }
 
+
+		/// <summary>
+		/// Button click to send finished module to finish dgv
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
         private void Btn_addFinished_Click(object sender, EventArgs e)
         {
             bool errors = false;
@@ -129,56 +123,75 @@ namespace CourseManager
                 MessageBox.Show("Please complete the form");
             }
         }
-
-
         #endregion
 
-        #region cellContentClick
 
+
+        #region cellContentClick
+		/// <summary>
+		/// Cell clicked - selecting particular module and display show options
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
         private void Dgv_ongoing_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 			ShowOptions(e);
+        }
+
+		private void Dgv_pending_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			ShowOptions(e);
 		}
 
-        private void ShowOptions(DataGridViewCellEventArgs e)
+		private void Dgv_finished_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			ShowOptions(e);
+		}
+
+		/// <summary>
+		/// Display the option form and checking against dgv and module objects
+		/// </summary>
+		/// <param name="e"></param>
+		private void ShowOptions(DataGridViewCellEventArgs e)
         {
             bool moduleFound = false;
             foreach (Module mod in moduleList)
             {
                 if (mod.moduleName == dgv_ongoing.Rows[dgv_ongoing.CurrentCell.RowIndex].Cells[0].Value.ToString() && mod.assignmentNum == Convert.ToInt32(dgv_ongoing.Rows[dgv_ongoing.CurrentCell.RowIndex].Cells[1].Value))
                 {
-					
 					moduleFound = true;
-                    currentModule = mod;
+                    currentModule = mod; //Goes to current module whatever is selected
                 }
             }
-
             if (moduleFound == true)
             {
                 OptionsForm optionsForm = new OptionsForm(currentModule);
                 optionsForm.ShowDialog();
-				//this.Hide();
+                //this.Hide();
+                this.Close();
             }
 			else
 			{
 				MessageBox.Show("Module not found");
 			}
         }
-
 		#endregion
 
+
+		//Add methods
 		#region Add/Remove methods
 		private void AddToOngoing()
         {
             string[] row = { currentModule.moduleName, currentModule.assignmentNum.ToString(), currentModule.TimeRemaining().ToString() };
             dgv_ongoing.Rows.Add(row);
         }
-        private void AddToPending(Module mod)
+        public void AddToPending()
         {
-			Pending.Add(mod);//Add to pending list
-            string[] row = {currentModule.moduleName, currentModule.assignmentNum.ToString(), currentModule.dueDate.ToString() };
-            dgv_pending.Rows.Add(row);
-			
+            //Pending.Add(mod);//Add to pending list collection
+            string[] row = {currentModule.moduleName, currentModule.assignmentNum.ToString(), currentModule.dueDate.ToString() }; //Change it to mod because it already contains the selected object/module
+			//removeOldLocation(mod); //remove old location      
+			dgv_pending.Rows.Add(row);
+            
         }
         private void AddToFinished()
         {
@@ -186,50 +199,38 @@ namespace CourseManager
             dgv_finished.Rows.Add(row);
         }
 
-		//removing
-        private void removeOldLocation(Module mod)
+
+		/// <summary>
+		/// Chooses the specific function through using to check the attribute location of the module.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+        private void Dashboard_Load(object sender, EventArgs e)
         {
-			currentModule = mod;
-            //ongoing
-            for (int ongoingIndex = 0; ongoingIndex < dgv_ongoing.Rows.Count -1; ongoingIndex++)
+            foreach (Module mod in moduleList)
             {
-                if (currentModule.moduleName == dgv_ongoing.Rows[ongoingIndex].Cells[0].Value.ToString() && currentModule.assignmentNum == Convert.ToInt32(dgv_ongoing.Rows[ongoingIndex].Cells[1].Value))
-                {
-                    dgv_ongoing.Rows.Remove(dgv_ongoing.Rows[ongoingIndex]);
-                }
-            }
+                currentModule = mod;
 
-            //Pending
-            for (int pendingIndex = 0; pendingIndex < dgv_pending.Rows.Count -1; pendingIndex++)
-            {
-                if (currentModule.moduleName == dgv_pending.Rows[pendingIndex].Cells[0].Value.ToString() && currentModule.assignmentNum == Convert.ToInt32(dgv_pending.Rows[pendingIndex].Cells[1].Value))
+                switch (mod.location)
                 {
-                    dgv_pending.Rows.Remove(dgv_pending.Rows[pendingIndex]);
-                }
-            }
+                    case "Ongoing":
+                        AddToOngoing();
+                        break;
 
-            //Finished
-            for (int finsihedIndex = 0; finsihedIndex < dgv_finished.Rows.Count -1; finsihedIndex++)
-            {
-                if (currentModule.moduleName == dgv_finished.Rows[finsihedIndex].Cells[0].Value.ToString() && currentModule.assignmentNum == Convert.ToInt32(dgv_finished.Rows[finsihedIndex].Cells[1].Value))
-                {
-                    dgv_finished.Rows.Remove(dgv_finished.Rows[finsihedIndex]);
+                    case "Pending":
+                        AddToPending();
+                        break;
+
+                    case "Finished":
+                        AddToOngoing();
+                        break;
+
+                    default:
+                        break;
                 }
             }
         }
-
-
 		#endregion
 
-		private void Dashboard_Activated(object sender, EventArgs e)
-		{
-			
-			foreach (Module mod in Pending)
-			{
-				removeOldLocation(mod);
-				string[] row = { mod.moduleName, mod.assignmentNum.ToString(), mod.dueDate.ToString() };
-				dgv_pending.Rows.Add(row);
-			}
-		}
 	}
 }
