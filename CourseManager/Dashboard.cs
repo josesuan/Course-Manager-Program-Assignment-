@@ -30,6 +30,7 @@ namespace CourseManager
         /// <param name="e"></param>
         private void Dashboard_Load(object sender, EventArgs e)
         {
+			
             foreach (Module mod in moduleList)
             {
                 currentModule = mod;
@@ -62,6 +63,7 @@ namespace CourseManager
         /// <param name="e"></param>
         private void Btn_add_Click(object sender, EventArgs e)
         {
+			//Checks if the textbox is empty
             bool errors = false;
             foreach (TextBox tb in this.tab_ongoing.Controls.OfType<TextBox>())
             {
@@ -75,21 +77,43 @@ namespace CourseManager
                 errors = true;
             }
 
-            if (errors == false)
+			
+            if (errors == false) //If all the textxbox are filled
             {
-				currentModule.year = tb_year.Text;
-                currentModule.assignmentNum = Convert.ToInt32(tb_assignmentNumber.Text);
-                currentModule.assigmentType = cb_assignmentType.Text;
-                currentModule.moduleName = tb_moduleName.Text;
-                currentModule.startDate = dt_startDate.Value;
-                currentModule.dueDate = dt_dueDate.Value;
-                currentModule.location = "Ongoing";
+				//Checks if the module exists
+                bool moduleFound = false;
+                foreach (Module mod in moduleList)
+                {
+					//if its true its an error
+                    if (mod.moduleName == tb_moduleName.Text && mod.assignmentNum == Convert.ToInt32(tb_assignmentNumber.Text))
+                    {
+                        //currentModule = mod;  eeewwww this was a BUG!!!
+                        moduleFound = true;
+                    }
+                }
 
-				//Add to module list as object
-				moduleList.Add(new Module(currentModule.year, currentModule.moduleName, currentModule.assignmentNum, currentModule.assigmentType, currentModule.startDate,currentModule.dueDate, currentModule.location));
+                if (moduleFound == false)
+                {
+                    currentModule.year = tb_year.Text;
+                    currentModule.assignmentNum = Convert.ToInt32(tb_assignmentNumber.Text);
+                    currentModule.assigmentType = cb_assignmentType.Text;
+                    currentModule.moduleName = tb_moduleName.Text;
+                    currentModule.startDate = dt_startDate.Value;
+                    currentModule.dueDate = dt_dueDate.Value;
+                    currentModule.location = "Ongoing";
 
-				AddToOngoing(); //Add to ongoing dgv
+                    //Add to module list as object
+                    moduleList.Add(new Module(currentModule.year, currentModule.moduleName, currentModule.assignmentNum, currentModule.assigmentType, currentModule.startDate, currentModule.dueDate, currentModule.location));
+
+                    AddToOngoing(); //Add to ongoing dgv
+
+                }
+                else if(moduleFound == true)
+                {
+                    MessageBox.Show("Module already exits");
+                }
             }
+
             else
             {
                 MessageBox.Show("Please complete the form");
@@ -258,5 +282,15 @@ namespace CourseManager
 				//Stays in dashboard
 			}
 		}
-	}
+
+        private void dgv_finished_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tab_finished_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

@@ -110,3 +110,28 @@ E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_Softw
 E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Thomas\CourseManager\obj\Debug\CourseManager.csproj.CoreCompileInputs.cache
 E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Thomas\CourseManager\obj\Debug\CourseManager.exe
 E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Thomas\CourseManager\obj\Debug\CourseManager.pdb
+C:\Users\credo\Documents\Nachos group V1- Emereole Chinduji\V2 group\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.csprojAssemblyReference.cache
+C:\Users\credo\Documents\Nachos group V1- Emereole Chinduji\V2 group\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.Dashboard.resources
+C:\Users\credo\Documents\Nachos group V1- Emereole Chinduji\V2 group\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.EditForm.resources
+C:\Users\credo\Documents\Nachos group V1- Emereole Chinduji\V2 group\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.Menu.resources
+C:\Users\credo\Documents\Nachos group V1- Emereole Chinduji\V2 group\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.OptionsForm.resources
+C:\Users\credo\Documents\Nachos group V1- Emereole Chinduji\V2 group\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.Properties.Resources.resources
+C:\Users\credo\Documents\Nachos group V1- Emereole Chinduji\V2 group\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.csproj.GenerateResource.cache
+C:\Users\credo\Documents\Nachos group V1- Emereole Chinduji\V2 group\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.exe
+C:\Users\credo\Documents\Nachos group V1- Emereole Chinduji\V2 group\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.pdb
+C:\Users\credo\Documents\Nachos group V1- Emereole Chinduji\V2 group\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\bin\Debug\CourseManager.exe.config
+C:\Users\credo\Documents\Nachos group V1- Emereole Chinduji\V2 group\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\bin\Debug\CourseManager.exe
+C:\Users\credo\Documents\Nachos group V1- Emereole Chinduji\V2 group\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\bin\Debug\CourseManager.pdb
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\bin\Debug\CourseManager.exe.config
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\bin\Debug\CourseManager.exe
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\bin\Debug\CourseManager.pdb
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.csprojAssemblyReference.cache
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.Dashboard.resources
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.EditForm.resources
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.Menu.resources
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.OptionsForm.resources
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.Properties.Resources.resources
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.csproj.GenerateResource.cache
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.csproj.CoreCompileInputs.cache
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.exe
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.pdb
