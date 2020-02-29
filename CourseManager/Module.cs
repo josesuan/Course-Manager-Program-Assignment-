@@ -16,6 +16,7 @@ namespace CourseManager
         public DateTime startDate { get; set; }
         public DateTime dueDate { get; set; }
         public string location { get; set; }
+        public int mark { get; set; }
 
 
 		//Constructors
@@ -34,6 +35,17 @@ namespace CourseManager
 			dueDate = DueDate;
 			location = Location;
 		}
+        public Module(string Year, string Modulename, int AssignmentNum, string AssignmentType, DateTime StartDate, DateTime DueDate, string Location, int grade)
+        {
+            year = Year;
+            moduleName = Modulename;
+            assignmentNum = AssignmentNum;
+            assigmentType = AssignmentType;
+            startDate = StartDate;
+            dueDate = DueDate;
+            location = Location;
+            mark = grade;
+        }
 
 
 

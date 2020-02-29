@@ -12,47 +12,53 @@ namespace CourseManager
 {
     public partial class OptionsForm : Form
     {
+		//Get current module
         Module currentModule;
 
-		Dashboard Dashboard = new Dashboard(); //Initialised object
+		//Object dashbooard
+		Dashboard dashboard = new Dashboard(); //Initialised object
 
 		public OptionsForm(Module mod)
         {
             InitializeComponent();
             currentModule = mod;
-
         }
 
         private void Bt_edit_Click(object sender, EventArgs e)
         {
-
+            EditForm formEdit = new EditForm(currentModule);
+            formEdit.Show();           
+            this.Close();
         }
 		
-
         private void Bt_sendPending_Click(object sender, EventArgs e)
         {
-			//Dashboard.removeOldLocation(currentModule); //Remove module in Ongoing
-			
-			Dashboard.AddToPending(currentModule); // Adds selected module in dgv pending
+			//Change location of selected module attribute to pending.
+            currentModule.location = "Pending";
+            dashboard.Show();
 			this.Close();
 		}
 
-		//Continue here!
 		private void Bt_remove_Click(object sender, EventArgs e)
 		{
-			//Remove in the dgv 
-			Dashboard dashboard = new Dashboard();
-
-
-			//Remove in object class
-			Dashboard.removeOldLocation(currentModule);
+			//Removes object in module list and dgv list
 			Dashboard.moduleList.Remove(currentModule);
-			this.Hide();
+            dashboard.Show();
+			this.Close();
 		}
 
 		private void Bt_sendFinish_Click(object sender, EventArgs e)
 		{
+            currentModule.location = "Finished";
+            dashboard.Show();
+            this.Close();
 
+        }
+
+		private void Btn_Back_Click(object sender, EventArgs e)
+		{
+			dashboard.Show();
+			this.Close();
 		}
 	}
 }
