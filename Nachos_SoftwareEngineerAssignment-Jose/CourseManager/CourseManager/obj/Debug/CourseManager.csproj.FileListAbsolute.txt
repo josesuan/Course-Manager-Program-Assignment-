@@ -1,0 +1,22 @@
+E:\Uni work\Year2\Software Engeneering\CourseManager\CourseManager\bin\Debug\CourseManager.exe.config
+E:\Uni work\Year2\Software Engeneering\CourseManager\CourseManager\bin\Debug\CourseManager.exe
+E:\Uni work\Year2\Software Engeneering\CourseManager\CourseManager\bin\Debug\CourseManager.pdb
+E:\Uni work\Year2\Software Engeneering\CourseManager\CourseManager\obj\Debug\CourseManager.csprojAssemblyReference.cache
+E:\Uni work\Year2\Software Engeneering\CourseManager\CourseManager\obj\Debug\CourseManager.Form1.resources
+E:\Uni work\Year2\Software Engeneering\CourseManager\CourseManager\obj\Debug\CourseManager.Properties.Resources.resources
+E:\Uni work\Year2\Software Engeneering\CourseManager\CourseManager\obj\Debug\CourseManager.csproj.GenerateResource.cache
+E:\Uni work\Year2\Software Engeneering\CourseManager\CourseManager\obj\Debug\CourseManager.csproj.CoreCompileInputs.cache
+E:\Uni work\Year2\Software Engeneering\CourseManager\CourseManager\obj\Debug\CourseManager.exe
+E:\Uni work\Year2\Software Engeneering\CourseManager\CourseManager\obj\Debug\CourseManager.pdb
+C:\Users\efren\Source\Repos\Nachos_SoftwareEngineerAssignment\CourseManager\CourseManager\bin\Debug\CourseManager.exe.config
+C:\Users\efren\Source\Repos\Nachos_SoftwareEngineerAssignment\CourseManager\CourseManager\bin\Debug\CourseManager.exe
+C:\Users\efren\Source\Repos\Nachos_SoftwareEngineerAssignment\CourseManager\CourseManager\bin\Debug\CourseManager.pdb
+C:\Users\efren\Source\Repos\Nachos_SoftwareEngineerAssignment\CourseManager\CourseManager\obj\Debug\CourseManager.csprojAssemblyReference.cache
+C:\Users\efren\Source\Repos\Nachos_SoftwareEngineerAssignment\CourseManager\CourseManager\obj\Debug\CourseManager.Dashboard.resources
+C:\Users\efren\Source\Repos\Nachos_SoftwareEngineerAssignment\CourseManager\CourseManager\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\efren\Source\Repos\Nachos_SoftwareEngineerAssignment\CourseManager\CourseManager\obj\Debug\WindowsFormsApp1.FormEdit.resources
+C:\Users\efren\Source\Repos\Nachos_SoftwareEngineerAssignment\CourseManager\CourseManager\obj\Debug\CourseManager.Properties.Resources.resources
+C:\Users\efren\Source\Repos\Nachos_SoftwareEngineerAssignment\CourseManager\CourseManager\obj\Debug\CourseManager.csproj.GenerateResource.cache
+C:\Users\efren\Source\Repos\Nachos_SoftwareEngineerAssignment\CourseManager\CourseManager\obj\Debug\CourseManager.csproj.CoreCompileInputs.cache
+C:\Users\efren\Source\Repos\Nachos_SoftwareEngineerAssignment\CourseManager\CourseManager\obj\Debug\CourseManager.exe
+C:\Users\efren\Source\Repos\Nachos_SoftwareEngineerAssignment\CourseManager\CourseManager\obj\Debug\CourseManager.pdb
