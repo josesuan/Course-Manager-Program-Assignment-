@@ -14,16 +14,10 @@ namespace CourseManager
     {
         Module currentModule;
 
-		
 		public EditForm(Module mod)
         {
             currentModule = mod;
             InitializeComponent();
-        }
-
-        private void EditForm_Load(object sender, EventArgs e)
-        {
-
         }
 
         /// <summary>
@@ -35,7 +29,7 @@ namespace CourseManager
         {
             bool errors = false;
 
-			//Verify if all textbox is filled
+            //Verify if all textbox is filled
             foreach (TextBox tb in this.Controls.OfType<TextBox>())
             {
                 if (tb.Text == string.Empty)
@@ -43,7 +37,6 @@ namespace CourseManager
                     errors = true;
                 }
             }
-
             if (ed_assignmentType.Text == string.Empty)
             {
                 errors = true;
@@ -58,18 +51,15 @@ namespace CourseManager
                 currentModule.startDate = ed_startDate.Value;
                 currentModule.dueDate = ed_dueDate.Value;
                 currentModule.mark = Convert.ToInt32(ed_MarkTexbox.Text);
-				Dashboard dash = new Dashboard(currentModule);
 
-				dash.Show();
+                Dashboard dash = new Dashboard();
+                dash.Show();
+                this.Close();
             }
-
             else
             {
                 MessageBox.Show("Please complete the form");
             }
-
-            EditForm formEdit = new EditForm(currentModule);
-            this.Close();
         }
     }
 }

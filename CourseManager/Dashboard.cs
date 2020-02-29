@@ -18,33 +18,52 @@ namespace CourseManager
 		//Module list
         static public List<Module> moduleList = new List<Module>();
 
-
-
         public Dashboard()
         {
             InitializeComponent();
         }
-		public Dashboard(Module mod)
-        {
-            InitializeComponent();
 
-            currentModule = mod; //Assign selected mod to current module object
+        /// <summary>
+        /// Chooses the specific function through using to check the attribute location of the module.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+			
+            foreach (Module mod in moduleList)
+            {
+                currentModule = mod;
+
+                switch (mod.location)
+                {
+                    case "Ongoing":
+                        AddToOngoing();
+                        break;
+
+                    case "Pending":
+                        AddToPending();
+                        break;
+
+                    case "Finished":
+                        AddToFinished();
+                        break;
+
+                    default:
+                        break;
+                }
+            }
         }
 
-		static public void dashboard(string location, Module mod)
-		{
-
-		}
-
-		
-		#region buttonClick
-		/// <summary>
-		/// Button click for adding new module to ongoing dgv 
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void Btn_add_Click(object sender, EventArgs e)
+        #region buttonClick
+        /// <summary>
+        /// Button click for adding new module to ongoing dgv 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Btn_add_Click(object sender, EventArgs e)
         {
+			//Checks if the textbox is empty
             bool errors = false;
             foreach (TextBox tb in this.tab_ongoing.Controls.OfType<TextBox>())
             {
@@ -58,21 +77,43 @@ namespace CourseManager
                 errors = true;
             }
 
-            if (errors == false)
+			
+            if (errors == false) //If all the textxbox are filled
             {
-				currentModule.year = tb_year.Text;
-                currentModule.assignmentNum = Convert.ToInt32(tb_assignmentNumber.Text);
-                currentModule.assigmentType = cb_assignmentType.Text;
-                currentModule.moduleName = tb_moduleName.Text;
-                currentModule.startDate = dt_startDate.Value;
-                currentModule.dueDate = dt_dueDate.Value;
-                currentModule.location = "Ongoing";
+				//Checks if the module exists
+                bool moduleFound = false;
+                foreach (Module mod in moduleList)
+                {
+					//if its true its an error
+                    if (mod.moduleName == tb_moduleName.Text && mod.assignmentNum == Convert.ToInt32(tb_assignmentNumber.Text))
+                    {
+                        //currentModule = mod;  eeewwww this was a BUG!!!
+                        moduleFound = true;
+                    }
+                }
 
-				//Add to module list as object
-				moduleList.Add(new Module(currentModule.year, currentModule.moduleName, currentModule.assignmentNum, currentModule.assigmentType, currentModule.startDate,currentModule.dueDate, currentModule.location));
+                if (moduleFound == false)
+                {
+                    currentModule.year = tb_year.Text;
+                    currentModule.assignmentNum = Convert.ToInt32(tb_assignmentNumber.Text);
+                    currentModule.assigmentType = cb_assignmentType.Text;
+                    currentModule.moduleName = tb_moduleName.Text;
+                    currentModule.startDate = dt_startDate.Value;
+                    currentModule.dueDate = dt_dueDate.Value;
+                    currentModule.location = "Ongoing";
 
-				AddToOngoing(); //Add to ongoing dgv
+                    //Add to module list as object
+                    moduleList.Add(new Module(currentModule.year, currentModule.moduleName, currentModule.assignmentNum, currentModule.assigmentType, currentModule.startDate, currentModule.dueDate, currentModule.location));
+
+                    AddToOngoing(); //Add to ongoing dgv
+
+                }
+                else if(moduleFound == true)
+                {
+                    MessageBox.Show("Module already exits");
+                }
             }
+
             else
             {
                 MessageBox.Show("Please complete the form");
@@ -126,7 +167,6 @@ namespace CourseManager
         #endregion
 
 
-
         #region cellContentClick
 		/// <summary>
 		/// Cell clicked - selecting particular module and display show options
@@ -135,45 +175,76 @@ namespace CourseManager
 		/// <param name="e"></param>
         private void Dgv_ongoing_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-			ShowOptions(e);
-        }
-
-		private void Dgv_pending_CellClick(object sender, DataGridViewCellEventArgs e)
-		{
-			ShowOptions(e);
-		}
-
-		private void Dgv_finished_CellClick(object sender, DataGridViewCellEventArgs e)
-		{
-			ShowOptions(e);
-		}
-
-		/// <summary>
-		/// Display the option form and checking against dgv and module objects
-		/// </summary>
-		/// <param name="e"></param>
-		private void ShowOptions(DataGridViewCellEventArgs e)
-        {
             bool moduleFound = false;
             foreach (Module mod in moduleList)
             {
                 if (mod.moduleName == dgv_ongoing.Rows[dgv_ongoing.CurrentCell.RowIndex].Cells[0].Value.ToString() && mod.assignmentNum == Convert.ToInt32(dgv_ongoing.Rows[dgv_ongoing.CurrentCell.RowIndex].Cells[1].Value))
                 {
-					moduleFound = true;
+                    moduleFound = true;
                     currentModule = mod; //Goes to current module whatever is selected
                 }
             }
             if (moduleFound == true)
             {
-                OptionsForm optionsForm = new OptionsForm(currentModule);
-                optionsForm.ShowDialog();
-                //this.Hide();
-                this.Close();
+                ShowOptions();
             }
-			else
-			{
-				MessageBox.Show("Module not found");
-			}
+            else
+            {
+                MessageBox.Show("Module not found");
+            }
+        }
+
+		private void Dgv_pending_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+            bool moduleFound = false;
+            foreach (Module mod in moduleList)
+            {
+                if (mod.moduleName == dgv_pending.Rows[dgv_pending.CurrentCell.RowIndex].Cells[0].Value.ToString() && mod.assignmentNum == Convert.ToInt32(dgv_pending.Rows[dgv_pending.CurrentCell.RowIndex].Cells[1].Value))
+                {
+                    moduleFound = true;
+                    currentModule = mod; //Goes to current module whatever is selected
+                }
+            }
+            if (moduleFound == true)
+            {
+                ShowOptions();
+            }
+            else
+            {
+                MessageBox.Show("Module not found");
+            }
+        }
+
+		private void Dgv_finished_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+            bool moduleFound = false;
+            foreach (Module mod in moduleList)
+            {
+                if (mod.moduleName == dgv_finished.Rows[dgv_finished.CurrentCell.RowIndex].Cells[0].Value.ToString() && mod.assignmentNum == Convert.ToInt32(dgv_finished.Rows[dgv_finished.CurrentCell.RowIndex].Cells[1].Value))
+                {
+                    moduleFound = true;
+                    currentModule = mod; //Goes to current module whatever is selected
+                }
+            }
+            if (moduleFound == true)
+            {
+                ShowOptions();
+            }
+            else
+            {
+                MessageBox.Show("Module not found");
+            }
+        }
+
+		/// <summary>
+		/// Display the option form and checking against dgv and module objects
+		/// </summary>
+		/// <param name="e"></param>
+		private void ShowOptions()
+        {
+            OptionsForm optionsForm = new OptionsForm(currentModule);
+            optionsForm.ShowDialog();
+            this.Close();
         }
 		#endregion
 
@@ -187,9 +258,7 @@ namespace CourseManager
         }
         public void AddToPending()
         {
-            //Pending.Add(mod);//Add to pending list collection
             string[] row = {currentModule.moduleName, currentModule.assignmentNum.ToString(), currentModule.dueDate.ToString() }; //Change it to mod because it already contains the selected object/module
-			//removeOldLocation(mod); //remove old location      
 			dgv_pending.Rows.Add(row);
             
         }
@@ -198,39 +267,30 @@ namespace CourseManager
             string[] row = { currentModule.moduleName, currentModule.assignmentNum.ToString(), tb_marksFinished.Text, currentModule.year };
             dgv_finished.Rows.Add(row);
         }
-
-
-		/// <summary>
-		/// Chooses the specific function through using to check the attribute location of the module.
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-        private void Dashboard_Load(object sender, EventArgs e)
-        {
-            foreach (Module mod in moduleList)
-            {
-                currentModule = mod;
-
-                switch (mod.location)
-                {
-                    case "Ongoing":
-                        AddToOngoing();
-                        break;
-
-                    case "Pending":
-                        AddToPending();
-                        break;
-
-                    case "Finished":
-                        AddToOngoing();
-                        break;
-
-                    default:
-                        break;
-                }
-            }
-        }
 		#endregion
 
-	}
+
+		private void Btn_Exit_Click(object sender, EventArgs e)
+		{
+			if(MessageBox.Show("Would you like to exit?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+			{
+				//Closes the program
+				Application.Exit();
+			}
+			else
+			{
+				//Stays in dashboard
+			}
+		}
+
+        private void dgv_finished_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void tab_finished_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

@@ -28,7 +28,6 @@ namespace CourseManager
         {
             EditForm formEdit = new EditForm(currentModule);
             formEdit.Show();           
-            OptionsForm optionForm = new OptionsForm(currentModule);
             this.Close();
         }
 		
@@ -45,13 +44,21 @@ namespace CourseManager
 			//Removes object in module list and dgv list
 			Dashboard.moduleList.Remove(currentModule);
             dashboard.Show();
-			this.Hide();
+			this.Close();
 		}
 
 		private void Bt_sendFinish_Click(object sender, EventArgs e)
 		{
-            
+            currentModule.location = "Finished";
+            dashboard.Show();
+            this.Close();
 
         }
+
+		private void Btn_Back_Click(object sender, EventArgs e)
+		{
+			dashboard.Show();
+			this.Close();
+		}
 	}
 }
