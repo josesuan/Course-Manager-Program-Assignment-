@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace CourseManager
 {
@@ -30,7 +31,8 @@ namespace CourseManager
         /// <param name="e"></param>
         private void Dashboard_Load(object sender, EventArgs e)
         {
-			
+			//Add method load here
+
             foreach (Module mod in moduleList)
             {
                 currentModule = mod;
@@ -164,77 +166,78 @@ namespace CourseManager
                 MessageBox.Show("Please complete the form");
             }
         }
-        #endregion
+		#endregion
 
 
-        #region cellContentClick
+		#region cellContentClick
 		/// <summary>
 		/// Cell clicked - selecting particular module and display show options
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-        private void Dgv_ongoing_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            bool moduleFound = false;
-            foreach (Module mod in moduleList)
-            {
-                if (mod.moduleName == dgv_ongoing.Rows[dgv_ongoing.CurrentCell.RowIndex].Cells[0].Value.ToString() && mod.assignmentNum == Convert.ToInt32(dgv_ongoing.Rows[dgv_ongoing.CurrentCell.RowIndex].Cells[1].Value))
-                {
-                    moduleFound = true;
-                    currentModule = mod; //Goes to current module whatever is selected
-                }
-            }
-            if (moduleFound == true)
-            {
-                ShowOptions();
-            }
-            else
-            {
-                MessageBox.Show("Module not found");
-            }
-        }
+		private void Dgv_ongoing_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			bool moduleFound = false;
+			foreach (Module mod in moduleList)
+			{
+				if (mod.moduleName == dgv_ongoing.Rows[dgv_ongoing.CurrentCell.RowIndex].Cells[0].Value.ToString() && mod.assignmentNum == Convert.ToInt32(dgv_ongoing.Rows[dgv_ongoing.CurrentCell.RowIndex].Cells[1].Value))
+				{
+					moduleFound = true;
+					currentModule = mod; //Goes to current module whatever is selected
+				}
+
+				if (moduleFound == true)
+				{
+					ShowOptions();
+				}
+				else
+				{
+					MessageBox.Show("Module not found");
+				}
+			}
+		}
 
 		private void Dgv_pending_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
             bool moduleFound = false;
-            foreach (Module mod in moduleList)
-            {
-                if (mod.moduleName == dgv_pending.Rows[dgv_pending.CurrentCell.RowIndex].Cells[0].Value.ToString() && mod.assignmentNum == Convert.ToInt32(dgv_pending.Rows[dgv_pending.CurrentCell.RowIndex].Cells[1].Value))
-                {
-                    moduleFound = true;
-                    currentModule = mod; //Goes to current module whatever is selected
-                }
-            }
-            if (moduleFound == true)
-            {
-                ShowOptions();
-            }
-            else
-            {
-                MessageBox.Show("Module not found");
-            }
+			foreach (Module mod in moduleList)
+			{
+				if (mod.moduleName == dgv_pending.Rows[dgv_pending.CurrentCell.RowIndex].Cells[0].Value.ToString() && mod.assignmentNum == Convert.ToInt32(dgv_pending.Rows[dgv_pending.CurrentCell.RowIndex].Cells[1].Value))
+				{
+					moduleFound = true;
+					currentModule = mod; //Goes to current module whatever is selected
+				}
+				if (moduleFound == true)
+				{
+					ShowOptions();
+				}
+				else
+				{
+					MessageBox.Show("Module not found");
+				}
+			}
         }
 
 		private void Dgv_finished_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-            bool moduleFound = false;
-            foreach (Module mod in moduleList)
-            {
-                if (mod.moduleName == dgv_finished.Rows[dgv_finished.CurrentCell.RowIndex].Cells[0].Value.ToString() && mod.assignmentNum == Convert.ToInt32(dgv_finished.Rows[dgv_finished.CurrentCell.RowIndex].Cells[1].Value))
-                {
-                    moduleFound = true;
-                    currentModule = mod; //Goes to current module whatever is selected
-                }
-            }
-            if (moduleFound == true)
-            {
-                ShowOptions();
-            }
-            else
-            {
-                MessageBox.Show("Module not found");
-            }
-        }
+			bool moduleFound = false;
+			foreach (Module mod in moduleList)
+			{
+				if (mod.moduleName == dgv_finished.Rows[dgv_finished.CurrentCell.RowIndex].Cells[0].Value.ToString() && mod.assignmentNum == Convert.ToInt32(dgv_finished.Rows[dgv_finished.CurrentCell.RowIndex].Cells[1].Value))
+				{
+					moduleFound = true;
+					currentModule = mod; //Goes to current module whatever is selected
+				}
+				if (moduleFound == true)
+				{
+					ShowOptions();
+				}
+				else
+				{
+					MessageBox.Show("Module not found");
+				}
+			}
+		}
 
 		/// <summary>
 		/// Display the option form and checking against dgv and module objects
@@ -272,8 +275,13 @@ namespace CourseManager
 
 		private void Btn_Exit_Click(object sender, EventArgs e)
 		{
-			if(MessageBox.Show("Would you like to exit?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+			if (MessageBox.Show("Would you like to exit?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
 			{
+				if (MessageBox.Show("Would you like to save your work?", "Save Work", MessageBoxButtons.YesNo) == DialogResult.Yes)
+				{
+					//Saves file
+					currentModule.SaveFile(moduleList);
+				}
 				//Closes the program
 				Application.Exit();
 			}
