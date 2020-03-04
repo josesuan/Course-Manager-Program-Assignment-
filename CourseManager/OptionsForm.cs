@@ -16,7 +16,7 @@ namespace CourseManager
         Module currentModule;
 
 		//Object dashbooard
-		Dashboard dashboard = new Dashboard(); //Initialised object
+		Dashboard dashboard = new Dashboard();
 
 		public OptionsForm(Module mod)
         {
@@ -41,10 +41,17 @@ namespace CourseManager
 
 		private void Bt_remove_Click(object sender, EventArgs e)
 		{
-			//Removes object in module list and dgv list
-			Dashboard.moduleList.Remove(currentModule);
-            dashboard.Show();
-			this.Close();
+			if (MessageBox.Show("Are you sure to remove selected module?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+			{
+				//Removes object in module list and dgv list
+				Dashboard.moduleList.Remove(currentModule);
+				dashboard.Show();
+				this.Close();
+			}
+			else
+			{
+				//Stays the same form, if no 
+			}
 		}
 
 		private void Bt_sendFinish_Click(object sender, EventArgs e)

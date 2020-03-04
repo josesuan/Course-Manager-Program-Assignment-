@@ -38,7 +38,6 @@ G:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_Softw
 G:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Development\CourseManager\bin\Debug\CourseManager.pdb
 G:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.csprojAssemblyReference.cache
 G:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.Dashboard.resources
-G:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\WindowsFormsApp1.FormEdit.resources
 G:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.OptionsForm.resources
 G:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.Properties.Resources.resources
 G:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.csproj.GenerateResource.cache
@@ -136,3 +135,5 @@ E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_Softw
 E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.pdb
 E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.EditForm.resources
 E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.Menu.resources
+G:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.EditForm.resources
+G:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.Menu.resources

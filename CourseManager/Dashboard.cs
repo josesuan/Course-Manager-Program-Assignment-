@@ -16,8 +16,11 @@ namespace CourseManager
 		//Initialised
 		Module currentModule = new Module(); //selection is the current module
 
+		//Create new object for adding new data in module list
+		Module addnewModule = new Module();
+
 		//Module list
-        static public List<Module> moduleList = new List<Module>();
+		static public List<Module> moduleList = new List<Module>();
 
         public Dashboard()
         {
@@ -31,7 +34,6 @@ namespace CourseManager
         /// <param name="e"></param>
         private void Dashboard_Load(object sender, EventArgs e)
         {
-			//Add method load here
 
             foreach (Module mod in moduleList)
             {
@@ -82,7 +84,7 @@ namespace CourseManager
 			
             if (errors == false) //If all the textxbox are filled
             {
-				//Checks if the module exists
+				//Checks if the module exists already
                 bool moduleFound = false;
                 foreach (Module mod in moduleList)
                 {
@@ -96,17 +98,20 @@ namespace CourseManager
 
                 if (moduleFound == false)
                 {
-                    currentModule.year = tb_year.Text;
-                    currentModule.assignmentNum = Convert.ToInt32(tb_assignmentNumber.Text);
-                    currentModule.assigmentType = cb_assignmentType.Text;
-                    currentModule.moduleName = tb_moduleName.Text;
-                    currentModule.startDate = dt_startDate.Value;
-                    currentModule.dueDate = dt_dueDate.Value;
-                    currentModule.location = "Ongoing";
+
+					addnewModule.year = tb_year.Text;
+					addnewModule.assignmentNum = Convert.ToInt32(tb_assignmentNumber.Text);
+					addnewModule.assigmentType = cb_assignmentType.Text;
+					addnewModule.moduleName = tb_moduleName.Text;
+					addnewModule.startDate = dt_startDate.Value;
+					addnewModule.dueDate = dt_dueDate.Value;
+					addnewModule.location = "Ongoing";
 
                     //Add to module list as object
-                    moduleList.Add(new Module(currentModule.year, currentModule.moduleName, currentModule.assignmentNum, currentModule.assigmentType, currentModule.startDate, currentModule.dueDate, currentModule.location));
+                    moduleList.Add(new Module(addnewModule.year, addnewModule.moduleName, addnewModule.assignmentNum, addnewModule.assigmentType, addnewModule.startDate, addnewModule.dueDate, addnewModule.location));
 
+					//Then assign addmodule to current module to add in the DGV
+					currentModule = addnewModule;
                     AddToOngoing(); //Add to ongoing dgv
 
                 }
@@ -178,64 +183,76 @@ namespace CourseManager
 		private void Dgv_ongoing_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 			bool moduleFound = false;
-			foreach (Module mod in moduleList)
+			try //This will TRY to run the following code, if not or there is any error, will run the CATCH statement. 
 			{
-				if (mod.moduleName == dgv_ongoing.Rows[dgv_ongoing.CurrentCell.RowIndex].Cells[0].Value.ToString() && mod.assignmentNum == Convert.ToInt32(dgv_ongoing.Rows[dgv_ongoing.CurrentCell.RowIndex].Cells[1].Value))
+				foreach (Module mod in moduleList)
 				{
-					moduleFound = true;
-					currentModule = mod; //Goes to current module whatever is selected
-				}
+					if (mod.moduleName == dgv_ongoing.Rows[dgv_ongoing.CurrentCell.RowIndex].Cells[0].Value.ToString() && mod.assignmentNum == Convert.ToInt32(dgv_ongoing.Rows[dgv_ongoing.CurrentCell.RowIndex].Cells[1].Value))
+					{
+						moduleFound = true;
+						currentModule = mod; //Goes to current module whatever is selected
+					}
 
-				if (moduleFound == true)
-				{
-					ShowOptions();
+					if (moduleFound == true)
+					{
+						ShowOptions();
+						break; //Stops searching again that makes the error of null, same as pending click and finished click
+					}
 				}
-				else
-				{
-					MessageBox.Show("Module not found");
-				}
+			}
+			catch
+			{
+				MessageBox.Show("Module not found!", "Alert");
 			}
 		}
 
 		private void Dgv_pending_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
             bool moduleFound = false;
-			foreach (Module mod in moduleList)
+			try
 			{
-				if (mod.moduleName == dgv_pending.Rows[dgv_pending.CurrentCell.RowIndex].Cells[0].Value.ToString() && mod.assignmentNum == Convert.ToInt32(dgv_pending.Rows[dgv_pending.CurrentCell.RowIndex].Cells[1].Value))
+				foreach (Module mod in moduleList)
 				{
-					moduleFound = true;
-					currentModule = mod; //Goes to current module whatever is selected
-				}
-				if (moduleFound == true)
-				{
-					ShowOptions();
-				}
-				else
-				{
-					MessageBox.Show("Module not found");
+					if (mod.moduleName == dgv_pending.Rows[dgv_pending.CurrentCell.RowIndex].Cells[0].Value.ToString() && mod.assignmentNum == Convert.ToInt32(dgv_pending.Rows[dgv_pending.CurrentCell.RowIndex].Cells[1].Value))
+					{
+						moduleFound = true;
+						currentModule = mod; //Goes to current module whatever is selected
+					}
+					if (moduleFound == true)
+					{
+						ShowOptions();
+						break;
+					}
 				}
 			}
-        }
+			catch
+			{
+				MessageBox.Show("Module not found!","Alert");
+			}
+		}
 
 		private void Dgv_finished_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			bool moduleFound = false;
-			foreach (Module mod in moduleList)
+			try
 			{
-				if (mod.moduleName == dgv_finished.Rows[dgv_finished.CurrentCell.RowIndex].Cells[0].Value.ToString() && mod.assignmentNum == Convert.ToInt32(dgv_finished.Rows[dgv_finished.CurrentCell.RowIndex].Cells[1].Value))
+				bool moduleFound = false;
+				foreach (Module mod in moduleList)
 				{
-					moduleFound = true;
-					currentModule = mod; //Goes to current module whatever is selected
+					if (mod.moduleName == dgv_finished.Rows[dgv_finished.CurrentCell.RowIndex].Cells[0].Value.ToString() && mod.assignmentNum == Convert.ToInt32(dgv_finished.Rows[dgv_finished.CurrentCell.RowIndex].Cells[1].Value))
+					{
+						moduleFound = true;
+						currentModule = mod; //Goes to current module whatever is selected
+					}
+					if (moduleFound == true)
+					{
+						ShowOptions();
+						break;
+					}
 				}
-				if (moduleFound == true)
-				{
-					ShowOptions();
-				}
-				else
-				{
-					MessageBox.Show("Module not found");
-				}
+			}
+			catch
+			{
+				MessageBox.Show("Module not found!", "Alert");
 			}
 		}
 
@@ -256,18 +273,19 @@ namespace CourseManager
 		#region Add/Remove methods
 		private void AddToOngoing()
         {
+			//------
             string[] row = { currentModule.moduleName, currentModule.assignmentNum.ToString(), currentModule.TimeRemaining().ToString() };
             dgv_ongoing.Rows.Add(row);
         }
         public void AddToPending()
         {
-            string[] row = {currentModule.moduleName, currentModule.assignmentNum.ToString(), currentModule.dueDate.ToString() }; //Change it to mod because it already contains the selected object/module
+            string[] row = {currentModule.moduleName, currentModule.assignmentNum.ToString(), currentModule.dueDate.ToString() }; 
 			dgv_pending.Rows.Add(row);
             
         }
         private void AddToFinished()
         {
-            string[] row = { currentModule.moduleName, currentModule.assignmentNum.ToString(), tb_marksFinished.Text, currentModule.year };
+            string[] row = { currentModule.moduleName, currentModule.assignmentNum.ToString(), currentModule.mark.ToString(), currentModule.year };
             dgv_finished.Rows.Add(row);
         }
 		#endregion
@@ -300,5 +318,5 @@ namespace CourseManager
         {
 
         }
-    }
+	}
 }
