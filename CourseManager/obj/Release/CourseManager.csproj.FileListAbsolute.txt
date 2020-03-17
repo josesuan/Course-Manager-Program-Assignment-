@@ -1,0 +1,13 @@
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\bin\Release\CourseManager.exe.config
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\bin\Release\CourseManager.exe
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\bin\Release\CourseManager.pdb
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Release\CourseManager.csprojAssemblyReference.cache
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Release\CourseManager.Dashboard.resources
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Release\CourseManager.EditForm.resources
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Release\CourseManager.Menu.resources
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Release\CourseManager.OptionsForm.resources
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Release\CourseManager.Properties.Resources.resources
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Release\CourseManager.csproj.GenerateResource.cache
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Release\CourseManager.csproj.CoreCompileInputs.cache
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Release\CourseManager.exe
+E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Chindu\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Release\CourseManager.pdb
