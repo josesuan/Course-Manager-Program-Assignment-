@@ -7,16 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace CourseManager
 {
     public partial class OptionsForm : Form
     {
 		//Get current module
-        Module currentModule;
-
-		//Object dashbooard
-		Dashboard dashboard = new Dashboard();
+        Module currentModule;		
 
 		public OptionsForm(Module mod)
         {
@@ -33,7 +31,8 @@ namespace CourseManager
 		
         private void Bt_sendPending_Click(object sender, EventArgs e)
         {
-			//Change location of selected module attribute to pending.
+            Dashboard dashboard = new Dashboard();
+            //Change location of selected module attribute to pending.
             currentModule.location = "Pending";
             dashboard.Show();
 			this.Close();
@@ -41,7 +40,8 @@ namespace CourseManager
 
 		private void Bt_remove_Click(object sender, EventArgs e)
 		{
-			if (MessageBox.Show("Are you sure to remove selected module?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            Dashboard dashboard = new Dashboard();
+            if (MessageBox.Show("Are you sure to remove selected module?", "Confirm", MessageBoxButtons.YesNo) == DialogResult.Yes)
 			{
 				//Removes object in module list and dgv list
 				Dashboard.moduleList.Remove(currentModule);
@@ -56,15 +56,37 @@ namespace CourseManager
 
 		private void Bt_sendFinish_Click(object sender, EventArgs e)
 		{
-            currentModule.location = "Finished";
-            dashboard.Show();
-            this.Close();
+            // Add marks Pop-up
+            string input = Interaction.InputBox("How Many Marks(%) did you get?", "Add Marks", "");
+            int mark;
+            if (input == string.Empty)
+            {
+
+            }
+            else
+            {
+                if ((int.TryParse(input, out mark)) && (Convert.ToInt32(input) >=0 && Convert.ToInt32(input) <= 100))
+                {
+                    currentModule.mark = mark;
+                    currentModule.location = "Finished";
+                    Dashboard dashboard = new Dashboard();
+                    dashboard.Show();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Marks(%) sould be between 0 and 100");
+                }
+            }
+            
+            
 
         }
 
 		private void Btn_Back_Click(object sender, EventArgs e)
 		{
-			dashboard.Show();
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
 			this.Close();
 		}
 	}

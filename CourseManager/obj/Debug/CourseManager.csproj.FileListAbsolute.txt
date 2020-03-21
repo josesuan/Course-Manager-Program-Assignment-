@@ -137,3 +137,41 @@ E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_Softw
 E:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.Menu.resources
 G:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.EditForm.resources
 G:\Uni Work Year 2\SEM 2\Software Engineering\Assignment 01\Program\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.Menu.resources
+N:\Software Development\Sprint3\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\bin\Debug\CourseManager.exe.config
+N:\Software Development\Sprint3\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\bin\Debug\CourseManager.exe
+N:\Software Development\Sprint3\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\bin\Debug\CourseManager.pdb
+N:\Software Development\Sprint3\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.csprojAssemblyReference.cache
+N:\Software Development\Sprint3\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.Dashboard.resources
+N:\Software Development\Sprint3\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.EditForm.resources
+N:\Software Development\Sprint3\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.Menu.resources
+N:\Software Development\Sprint3\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.OptionsForm.resources
+N:\Software Development\Sprint3\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.Properties.Resources.resources
+N:\Software Development\Sprint3\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.csproj.GenerateResource.cache
+N:\Software Development\Sprint3\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.csproj.CoreCompileInputs.cache
+N:\Software Development\Sprint3\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.exe
+N:\Software Development\Sprint3\Nachos_SoftwareEngineerAssignment-Jose\CourseManager\obj\Debug\CourseManager.pdb
+C:\Users\ce233\OneDrive - Canterbury Christ Church University\Documents\NachosGroup\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\bin\Debug\CourseManager.exe.config
+C:\Users\ce233\OneDrive - Canterbury Christ Church University\Documents\NachosGroup\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\bin\Debug\CourseManager.exe
+C:\Users\ce233\OneDrive - Canterbury Christ Church University\Documents\NachosGroup\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\bin\Debug\CourseManager.pdb
+C:\Users\ce233\OneDrive - Canterbury Christ Church University\Documents\NachosGroup\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.csprojAssemblyReference.cache
+C:\Users\ce233\OneDrive - Canterbury Christ Church University\Documents\NachosGroup\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.Dashboard.resources
+C:\Users\ce233\OneDrive - Canterbury Christ Church University\Documents\NachosGroup\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.EditForm.resources
+C:\Users\ce233\OneDrive - Canterbury Christ Church University\Documents\NachosGroup\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.Menu.resources
+C:\Users\ce233\OneDrive - Canterbury Christ Church University\Documents\NachosGroup\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.OptionsForm.resources
+C:\Users\ce233\OneDrive - Canterbury Christ Church University\Documents\NachosGroup\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.Properties.Resources.resources
+C:\Users\ce233\OneDrive - Canterbury Christ Church University\Documents\NachosGroup\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.csproj.GenerateResource.cache
+C:\Users\ce233\OneDrive - Canterbury Christ Church University\Documents\NachosGroup\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.csproj.CoreCompileInputs.cache
+C:\Users\ce233\OneDrive - Canterbury Christ Church University\Documents\NachosGroup\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.exe
+C:\Users\ce233\OneDrive - Canterbury Christ Church University\Documents\NachosGroup\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.pdb
+C:\Users\credo\Desktop\Hobbies\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\bin\Debug\CourseManager.exe.config
+C:\Users\credo\Desktop\Hobbies\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\bin\Debug\CourseManager.exe
+C:\Users\credo\Desktop\Hobbies\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\bin\Debug\CourseManager.pdb
+C:\Users\credo\Desktop\Hobbies\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.csprojAssemblyReference.cache
+C:\Users\credo\Desktop\Hobbies\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.Dashboard.resources
+C:\Users\credo\Desktop\Hobbies\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.EditForm.resources
+C:\Users\credo\Desktop\Hobbies\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.Menu.resources
+C:\Users\credo\Desktop\Hobbies\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.OptionsForm.resources
+C:\Users\credo\Desktop\Hobbies\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.Properties.Resources.resources
+C:\Users\credo\Desktop\Hobbies\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.csproj.GenerateResource.cache
+C:\Users\credo\Desktop\Hobbies\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.exe
+C:\Users\credo\Desktop\Hobbies\version 3\Nachos_SoftwareEngineerAssignment-Development (6)\Nachos_SoftwareEngineerAssignment-Development\CourseManager\obj\Debug\CourseManager.pdb

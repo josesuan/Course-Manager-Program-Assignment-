@@ -61,11 +61,11 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(121, 11);
+			this.label1.Location = new System.Drawing.Point(154, 9);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(209, 24);
+			this.label1.Size = new System.Drawing.Size(122, 24);
 			this.label1.TabIndex = 11;
-			this.label1.Text = "Edit Ongoing Module";
+			this.label1.Text = "Edit Module";
 			// 
 			// label6
 			// 
@@ -138,14 +138,22 @@
 			// ed_moduleName
 			// 
 			this.ed_moduleName.Location = new System.Drawing.Point(25, 236);
+			this.ed_moduleName.MaxLength = 40;
 			this.ed_moduleName.Name = "ed_moduleName";
 			this.ed_moduleName.Size = new System.Drawing.Size(144, 20);
 			this.ed_moduleName.TabIndex = 23;
-			this.ed_moduleName.Text = "OOP";
 			// 
 			// ed_assignmentType
 			// 
 			this.ed_assignmentType.FormattingEnabled = true;
+			this.ed_assignmentType.Items.AddRange(new object[] {
+            "Essay",
+            "Report",
+            "Course Work",
+            "Exam",
+            "Group Work",
+            "Project",
+            "Presentation"});
 			this.ed_assignmentType.Location = new System.Drawing.Point(25, 186);
 			this.ed_assignmentType.Name = "ed_assignmentType";
 			this.ed_assignmentType.Size = new System.Drawing.Size(144, 21);
@@ -155,26 +163,26 @@
 			// ed_assignmentNumber
 			// 
 			this.ed_assignmentNumber.Location = new System.Drawing.Point(25, 136);
+			this.ed_assignmentNumber.MaxLength = 2;
 			this.ed_assignmentNumber.Name = "ed_assignmentNumber";
 			this.ed_assignmentNumber.Size = new System.Drawing.Size(144, 20);
 			this.ed_assignmentNumber.TabIndex = 21;
-			this.ed_assignmentNumber.Text = "1";
 			// 
 			// ed_year
 			// 
 			this.ed_year.Location = new System.Drawing.Point(25, 86);
+			this.ed_year.MaxLength = 2;
 			this.ed_year.Name = "ed_year";
 			this.ed_year.Size = new System.Drawing.Size(145, 20);
 			this.ed_year.TabIndex = 20;
-			this.ed_year.Text = "1";
 			// 
 			// ed_MarkTexbox
 			// 
 			this.ed_MarkTexbox.Location = new System.Drawing.Point(248, 86);
+			this.ed_MarkTexbox.MaxLength = 3;
 			this.ed_MarkTexbox.Name = "ed_MarkTexbox";
 			this.ed_MarkTexbox.Size = new System.Drawing.Size(145, 20);
 			this.ed_MarkTexbox.TabIndex = 32;
-			this.ed_MarkTexbox.Text = "1";
 			// 
 			// label8
 			// 
@@ -193,6 +201,7 @@
 			this.btn_Cancel.TabIndex = 34;
 			this.btn_Cancel.Text = "Cancel";
 			this.btn_Cancel.UseVisualStyleBackColor = true;
+			this.btn_Cancel.Click += new System.EventHandler(this.Btn_Cancel_Click);
 			// 
 			// EditForm
 			// 
@@ -219,6 +228,7 @@
 			this.Controls.Add(this.label1);
 			this.Name = "EditForm";
 			this.Text = "EditForm";
+			this.Load += new System.EventHandler(this.EditForm_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

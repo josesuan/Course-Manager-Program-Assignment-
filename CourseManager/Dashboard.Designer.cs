@@ -29,18 +29,11 @@
         private void InitializeComponent()
         {
 			this.tab_finished = new System.Windows.Forms.TabPage();
-			this.btn_addFinished = new System.Windows.Forms.Button();
 			this.dgv_finished = new System.Windows.Forms.DataGridView();
 			this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.marks = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.year = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.label9 = new System.Windows.Forms.Label();
-			this.tb_marksFinished = new System.Windows.Forms.TextBox();
-			this.tb_assignmentNumberFinished = new System.Windows.Forms.TextBox();
-			this.tb_moduleNameFinished = new System.Windows.Forms.TextBox();
-			this.label8 = new System.Windows.Forms.Label();
-			this.label7 = new System.Windows.Forms.Label();
 			this.tab_pending = new System.Windows.Forms.TabPage();
 			this.dgv_pending = new System.Windows.Forms.DataGridView();
 			this.moduleNamePending = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,14 +71,7 @@
 			// 
 			// tab_finished
 			// 
-			this.tab_finished.Controls.Add(this.btn_addFinished);
 			this.tab_finished.Controls.Add(this.dgv_finished);
-			this.tab_finished.Controls.Add(this.label9);
-			this.tab_finished.Controls.Add(this.tb_marksFinished);
-			this.tab_finished.Controls.Add(this.tb_assignmentNumberFinished);
-			this.tab_finished.Controls.Add(this.tb_moduleNameFinished);
-			this.tab_finished.Controls.Add(this.label8);
-			this.tab_finished.Controls.Add(this.label7);
 			this.tab_finished.Location = new System.Drawing.Point(4, 22);
 			this.tab_finished.Name = "tab_finished";
 			this.tab_finished.Padding = new System.Windows.Forms.Padding(3);
@@ -94,16 +80,6 @@
 			this.tab_finished.Text = "Finished";
 			this.tab_finished.UseVisualStyleBackColor = true;
 			this.tab_finished.Click += new System.EventHandler(this.tab_finished_Click);
-			// 
-			// btn_addFinished
-			// 
-			this.btn_addFinished.Location = new System.Drawing.Point(8, 203);
-			this.btn_addFinished.Name = "btn_addFinished";
-			this.btn_addFinished.Size = new System.Drawing.Size(143, 59);
-			this.btn_addFinished.TabIndex = 19;
-			this.btn_addFinished.Text = "Add";
-			this.btn_addFinished.UseVisualStyleBackColor = true;
-			this.btn_addFinished.Click += new System.EventHandler(this.Btn_addFinished_Click);
 			// 
 			// dgv_finished
 			// 
@@ -114,14 +90,15 @@
             this.dataGridViewTextBoxColumn2,
             this.marks,
             this.year});
-			this.dgv_finished.Location = new System.Drawing.Point(191, 29);
+			this.dgv_finished.Location = new System.Drawing.Point(37, 18);
 			this.dgv_finished.Name = "dgv_finished";
 			this.dgv_finished.RowHeadersVisible = false;
 			this.dgv_finished.RowHeadersWidth = 62;
-			this.dgv_finished.Size = new System.Drawing.Size(561, 385);
+			this.dgv_finished.Size = new System.Drawing.Size(703, 376);
 			this.dgv_finished.TabIndex = 18;
 			this.dgv_finished.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_finished_CellClick);
 			this.dgv_finished.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_finished_CellContentClick);
+			this.dgv_finished.SortCompare += new System.Windows.Forms.DataGridViewSortCompareEventHandler(this.dgv_finished_SortCompare);
 			// 
 			// dataGridViewTextBoxColumn1
 			// 
@@ -151,54 +128,6 @@
 			this.year.MinimumWidth = 8;
 			this.year.Name = "year";
 			// 
-			// label9
-			// 
-			this.label9.AutoSize = true;
-			this.label9.Location = new System.Drawing.Point(9, 142);
-			this.label9.Name = "label9";
-			this.label9.Size = new System.Drawing.Size(36, 13);
-			this.label9.TabIndex = 17;
-			this.label9.Text = "Marks";
-			// 
-			// tb_marksFinished
-			// 
-			this.tb_marksFinished.Location = new System.Drawing.Point(8, 158);
-			this.tb_marksFinished.Name = "tb_marksFinished";
-			this.tb_marksFinished.Size = new System.Drawing.Size(143, 20);
-			this.tb_marksFinished.TabIndex = 16;
-			// 
-			// tb_assignmentNumberFinished
-			// 
-			this.tb_assignmentNumberFinished.Location = new System.Drawing.Point(8, 98);
-			this.tb_assignmentNumberFinished.Name = "tb_assignmentNumberFinished";
-			this.tb_assignmentNumberFinished.Size = new System.Drawing.Size(143, 20);
-			this.tb_assignmentNumberFinished.TabIndex = 14;
-			// 
-			// tb_moduleNameFinished
-			// 
-			this.tb_moduleNameFinished.Location = new System.Drawing.Point(6, 45);
-			this.tb_moduleNameFinished.Name = "tb_moduleNameFinished";
-			this.tb_moduleNameFinished.Size = new System.Drawing.Size(145, 20);
-			this.tb_moduleNameFinished.TabIndex = 12;
-			// 
-			// label8
-			// 
-			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(9, 82);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(101, 13);
-			this.label8.TabIndex = 15;
-			this.label8.Text = "Assignment Number";
-			// 
-			// label7
-			// 
-			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(9, 29);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(73, 13);
-			this.label7.TabIndex = 13;
-			this.label7.Text = "Module Name";
-			// 
 			// tab_pending
 			// 
 			this.tab_pending.Controls.Add(this.dgv_pending);
@@ -217,7 +146,7 @@
             this.moduleNamePending,
             this.assignmentNumberPending,
             this.dueDate});
-			this.dgv_pending.Location = new System.Drawing.Point(30, 42);
+			this.dgv_pending.Location = new System.Drawing.Point(37, 20);
 			this.dgv_pending.Name = "dgv_pending";
 			this.dgv_pending.RowHeadersVisible = false;
 			this.dgv_pending.RowHeadersWidth = 62;
@@ -392,30 +321,38 @@
 			// tb_moduleName
 			// 
 			this.tb_moduleName.Location = new System.Drawing.Point(8, 198);
+			this.tb_moduleName.MaxLength = 40;
 			this.tb_moduleName.Name = "tb_moduleName";
 			this.tb_moduleName.Size = new System.Drawing.Size(144, 20);
 			this.tb_moduleName.TabIndex = 3;
-			this.tb_moduleName.Text = "OOP";
 			// 
 			// tb_assignmentNumber
 			// 
 			this.tb_assignmentNumber.Location = new System.Drawing.Point(8, 98);
+			this.tb_assignmentNumber.MaxLength = 2;
 			this.tb_assignmentNumber.Name = "tb_assignmentNumber";
 			this.tb_assignmentNumber.Size = new System.Drawing.Size(144, 20);
-			this.tb_assignmentNumber.TabIndex = 1;
-			this.tb_assignmentNumber.Text = "1";
+			this.tb_assignmentNumber.TabIndex = 2;
 			// 
 			// tb_year
 			// 
 			this.tb_year.Location = new System.Drawing.Point(8, 48);
+			this.tb_year.MaxLength = 1;
 			this.tb_year.Name = "tb_year";
 			this.tb_year.Size = new System.Drawing.Size(145, 20);
 			this.tb_year.TabIndex = 0;
-			this.tb_year.Text = "1";
 			// 
 			// cb_assignmentType
 			// 
 			this.cb_assignmentType.FormattingEnabled = true;
+			this.cb_assignmentType.Items.AddRange(new object[] {
+            "Essay",
+            "Report",
+            "Coursework",
+            "Exam",
+            "Group project",
+            "Project",
+            "Presentation"});
 			this.cb_assignmentType.Location = new System.Drawing.Point(8, 148);
 			this.cb_assignmentType.Name = "cb_assignmentType";
 			this.cb_assignmentType.Size = new System.Drawing.Size(144, 21);
@@ -463,10 +400,9 @@
 			this.Controls.Add(this.btn_Exit);
 			this.Controls.Add(this.dg_ongoing);
 			this.Name = "Dashboard";
-			this.Text = "Form1";
+			this.Text = "Dashboard";
 			this.Load += new System.EventHandler(this.Dashboard_Load);
 			this.tab_finished.ResumeLayout(false);
-			this.tab_finished.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgv_finished)).EndInit();
 			this.tab_pending.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.dgv_pending)).EndInit();
@@ -482,18 +418,11 @@
         #endregion
 
         private System.Windows.Forms.TabPage tab_finished;
-        private System.Windows.Forms.Button btn_addFinished;
         private System.Windows.Forms.DataGridView dgv_finished;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn marks;
         private System.Windows.Forms.DataGridViewTextBoxColumn year;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox tb_marksFinished;
-        private System.Windows.Forms.TextBox tb_assignmentNumberFinished;
-        private System.Windows.Forms.TextBox tb_moduleNameFinished;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage tab_pending;
         private System.Windows.Forms.DataGridView dgv_pending;
         private System.Windows.Forms.DataGridViewTextBoxColumn moduleNamePending;
@@ -520,6 +449,6 @@
         private System.Windows.Forms.TabControl dg_ongoing;
 		private System.Windows.Forms.Button btn_Exit;
 		private System.Windows.Forms.Label label10;
-	}
+    }
 }
 

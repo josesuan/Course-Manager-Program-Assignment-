@@ -38,6 +38,7 @@ namespace CourseManager
             foreach (Module mod in moduleList)
             {
                 currentModule = mod;
+                
 
                 switch (mod.location)
                 {
@@ -51,13 +52,15 @@ namespace CourseManager
 
                     case "Finished":
                         AddToFinished();
+                       
                         break;
 
                     default:
                         break;
                 }
             }
-        }
+			Sorting();
+		}
 
         #region buttonClick
         /// <summary>
@@ -84,91 +87,55 @@ namespace CourseManager
 			
             if (errors == false) //If all the textxbox are filled
             {
-				//Checks if the module exists already
-                bool moduleFound = false;
-                foreach (Module mod in moduleList)
-                {
-					//if its true its an error
-                    if (mod.moduleName == tb_moduleName.Text && mod.assignmentNum == Convert.ToInt32(tb_assignmentNumber.Text))
-                    {
-                        //currentModule = mod;  eeewwww this was a BUG!!!
-                        moduleFound = true;
-                    }
-                }
+				int result;
+				int result2;
+				if (int.TryParse(tb_assignmentNumber.Text, out result) && int.TryParse(tb_year.Text, out result2)) //checks input
+				{
 
-                if (moduleFound == false)
-                {
 
-					addnewModule.year = tb_year.Text;
-					addnewModule.assignmentNum = Convert.ToInt32(tb_assignmentNumber.Text);
-					addnewModule.assigmentType = cb_assignmentType.Text;
-					addnewModule.moduleName = tb_moduleName.Text;
-					addnewModule.startDate = dt_startDate.Value;
-					addnewModule.dueDate = dt_dueDate.Value;
-					addnewModule.location = "Ongoing";
 
-                    //Add to module list as object
-                    moduleList.Add(new Module(addnewModule.year, addnewModule.moduleName, addnewModule.assignmentNum, addnewModule.assigmentType, addnewModule.startDate, addnewModule.dueDate, addnewModule.location));
+					//Checks if the module exists already
+					bool moduleFound = false;
+					foreach (Module mod in moduleList)
+					{
+						//if its true its an error
+						if (mod.moduleName == tb_moduleName.Text && mod.assignmentNum == Convert.ToInt32(tb_assignmentNumber.Text))
+						{
+							//currentModule = mod;  eeewwww this was a BUG!!!
+							moduleFound = true;
+						}
+					}
 
-					//Then assign addmodule to current module to add in the DGV
-					currentModule = addnewModule;
-                    AddToOngoing(); //Add to ongoing dgv
+					if (moduleFound == false)
+					{
 
-                }
-                else if(moduleFound == true)
-                {
-                    MessageBox.Show("Module already exits");
-                }
+						addnewModule.year = Convert.ToInt32(tb_year.Text);
+						addnewModule.assignmentNum = Convert.ToInt32(tb_assignmentNumber.Text);
+						addnewModule.assigmentType = cb_assignmentType.Text;
+						addnewModule.moduleName = tb_moduleName.Text;
+						addnewModule.startDate = dt_startDate.Value;
+						addnewModule.dueDate = dt_dueDate.Value;
+						addnewModule.location = "Ongoing";
+
+						//Add to module list as object
+						moduleList.Add(new Module(addnewModule.year, addnewModule.moduleName, addnewModule.assignmentNum, addnewModule.assigmentType, addnewModule.startDate, addnewModule.dueDate, addnewModule.location));
+
+						//Then assign addmodule to current module to add in the DGV
+						currentModule = addnewModule;
+						AddToOngoing(); //Add to ongoing dgv
+
+					}
+					else if (moduleFound == true)
+					{
+						MessageBox.Show("Module already exits");
+					}
+				}
+				else { MessageBox.Show("Invalid Input", "Error"); }
             }
 
             else
             {
-                MessageBox.Show("Please complete the form");
-            }
-        }
-
-
-		/// <summary>
-		/// Button click to send finished module to finish dgv
-		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-        private void Btn_addFinished_Click(object sender, EventArgs e)
-        {
-            bool errors = false;
-            foreach (TextBox tb in this.tab_finished.Controls.OfType<TextBox>())
-            {
-                if (tb.Text == string.Empty)
-                {
-                    errors = true;
-                }
-            }
-
-            if (errors == false)
-            {
-                bool moduleFound = false;
-                foreach (Module mod in moduleList)
-                {
-                    if (mod.moduleName == tb_moduleNameFinished.Text && mod.assignmentNum == Convert.ToInt32(tb_assignmentNumberFinished.Text))
-                    {
-                        currentModule = mod;
-                        moduleFound = true;
-                    }
-                }
-
-                if (moduleFound == false)
-                {
-                    MessageBox.Show("Module Not found");
-                }
-                else
-                {
-                    AddToFinished();
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Please complete the form");
+                MessageBox.Show("Please complete the form","Missing input");
             }
         }
 		#endregion
@@ -285,8 +252,10 @@ namespace CourseManager
         }
         private void AddToFinished()
         {
-            string[] row = { currentModule.moduleName, currentModule.assignmentNum.ToString(), currentModule.mark.ToString(), currentModule.year };
+                   
+            string[] row = { currentModule.moduleName, currentModule.assignmentNum.ToString(), currentModule.mark.ToString(), currentModule.year.ToString() };
             dgv_finished.Rows.Add(row);
+           
         }
 		#endregion
 
@@ -318,5 +287,23 @@ namespace CourseManager
         {
 
         }
-	}
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Sorts all assignments by year from the most recent to the last one. The sorting is made in the finished tab.
+        /// </summary>
+        public void Sorting()
+        {
+            dgv_finished.Sort(dgv_finished.Columns[3], ListSortDirection.Descending);
+        }      
+
+        private void dgv_finished_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        {
+
+        }
+    }
 }

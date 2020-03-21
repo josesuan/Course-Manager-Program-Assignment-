@@ -11,7 +11,7 @@ namespace CourseManager
     {
 
 		//Properties
-        public string year { get; set; }
+        public int year { get; set; }
         public string moduleName { get; set; }
         public int assignmentNum { get; set; }
         public string assigmentType { get; set; }
@@ -30,7 +30,7 @@ namespace CourseManager
 		}
 
 		//Pending Modules
-		public Module(string Year, string Modulename, int AssignmentNum, string AssignmentType, DateTime StartDate, DateTime DueDate, string Location)
+		public Module(int Year, string Modulename, int AssignmentNum, string AssignmentType, DateTime StartDate, DateTime DueDate, string Location)
 		{
 			year = Year;
 			moduleName = Modulename;
@@ -41,7 +41,7 @@ namespace CourseManager
 			location = Location;
 		}
 		//Finished Modules and construcor for loading files
-        public Module(string Year, string Modulename, int AssignmentNum, string AssignmentType, DateTime StartDate, DateTime DueDate, string Location, int grade)
+        public Module(int Year, string Modulename, int AssignmentNum, string AssignmentType, DateTime StartDate, DateTime DueDate, string Location, int grade)
         {
             year = Year;
             moduleName = Modulename;
@@ -114,7 +114,7 @@ namespace CourseManager
 					moduleAttributes[7] = lines.Split(',')[7];  //mark
 
 					//Add all attributes of module into load module list
-					loadModuleList.Add(new Module(moduleAttributes[0], moduleAttributes[1], Convert.ToInt32(moduleAttributes[2]), moduleAttributes[3], Convert.ToDateTime(moduleAttributes[4]), Convert.ToDateTime(moduleAttributes[5]), moduleAttributes[6], Convert.ToInt32(moduleAttributes[7])));
+					loadModuleList.Add(new Module(Convert.ToInt32(moduleAttributes[0]), moduleAttributes[1], Convert.ToInt32(moduleAttributes[2]), moduleAttributes[3], Convert.ToDateTime(moduleAttributes[4]), Convert.ToDateTime(moduleAttributes[5]), moduleAttributes[6], Convert.ToInt32(moduleAttributes[7])));
 				}
 
 			}

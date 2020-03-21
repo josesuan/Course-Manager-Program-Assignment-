@@ -44,7 +44,7 @@ namespace CourseManager
 
             if (errors == false)
             {
-                currentModule.year = ed_year.Text;
+                currentModule.year = Convert.ToInt32(ed_year.Text);
                 currentModule.assignmentNum = Convert.ToInt32(ed_assignmentNumber.Text);
                 currentModule.assigmentType = ed_assignmentType.Text;
                 currentModule.moduleName = ed_moduleName.Text;
@@ -61,5 +61,24 @@ namespace CourseManager
                 MessageBox.Show("Please complete the form");
             }
         }
-    }
+
+		private void Btn_Cancel_Click(object sender, EventArgs e)
+		{
+			OptionsForm optionsForm = new OptionsForm(currentModule);
+			optionsForm.Show();
+			this.Close();
+		}
+
+		private void EditForm_Load(object sender, EventArgs e)
+		{
+			//Load current module details to edit form forms
+			ed_year.Text = currentModule.year.ToString();
+			ed_assignmentNumber.Text = currentModule.assignmentNum.ToString();
+			ed_assignmentType.SelectedItem = currentModule.assigmentType;
+			ed_moduleName.Text = currentModule.moduleName;
+			ed_startDate.Value = currentModule.startDate;
+			ed_dueDate.Value = currentModule.dueDate;
+			ed_MarkTexbox.Text = currentModule.mark.ToString();
+		}
+	}
 }
